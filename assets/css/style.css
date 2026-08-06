@@ -217,6 +217,92 @@ ul {
 }
 
 /* ==========================================================================
+   Page header (subpages)
+   ========================================================================== */
+
+.page-header {
+  text-align: center;
+  padding-block: 72px 48px;
+}
+
+.page-header h1 {
+  font-size: clamp(1.8rem, 4vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  max-width: 760px;
+  margin-inline: auto;
+  color: var(--color-text);
+}
+
+.page-header-desc {
+  max-width: 620px;
+  margin: 20px auto 0;
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+}
+
+/* ==========================================================================
+   Offer sections
+   ========================================================================== */
+
+.offer-section {
+  padding-block: 48px;
+  border-top: 1px solid rgba(16, 33, 61, 0.06);
+}
+
+.offer-section:nth-of-type(even) {
+  background-color: var(--color-card-bg);
+}
+
+.offer-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.offer-icon {
+  flex-shrink: 0;
+  font-size: 40px;
+  color: var(--color-accent);
+}
+
+.offer-content h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 12px;
+}
+
+.offer-content p {
+  font-size: 0.98rem;
+  color: var(--color-text-secondary);
+  max-width: 760px;
+}
+
+.offer-list {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.offer-list li {
+  position: relative;
+  padding-left: 26px;
+  font-size: 0.92rem;
+  color: var(--color-text);
+}
+
+.offer-list li::before {
+  content: '\2713';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+/* ==========================================================================
    Services
    ========================================================================== */
 
@@ -380,6 +466,19 @@ ul {
 
   .cta-card {
     padding: 32px 24px;
+  }
+
+  .page-header {
+    padding-block: 48px 32px;
+  }
+
+  .offer-inner {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .offer-icon {
+    font-size: 34px;
   }
 }
 
