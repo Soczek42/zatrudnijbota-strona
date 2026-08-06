@@ -303,6 +303,74 @@ ul {
 }
 
 /* ==========================================================================
+   About page
+   ========================================================================== */
+
+.about {
+  padding-block: 12px 80px;
+}
+
+.about-text {
+  max-width: 700px;
+  margin-inline: auto;
+}
+
+.about-text p {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 20px;
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+.about-highlight {
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.badges-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto 56px;
+}
+
+.badge-card {
+  background-color: var(--color-card-bg);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  text-align: center;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.badge-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(29, 78, 216, 0.1);
+}
+
+.badge-icon {
+  font-size: 34px;
+  color: var(--color-accent);
+  display: block;
+  margin-inline: auto;
+  margin-bottom: 14px;
+  transition: transform var(--transition);
+}
+
+.badge-card:hover .badge-icon {
+  transform: scale(1.14);
+}
+
+.badge-card p {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+/* ==========================================================================
    Services
    ========================================================================== */
 
@@ -416,7 +484,8 @@ ul {
    ========================================================================== */
 
 @media (max-width: 900px) {
-  .services-grid {
+  .services-grid,
+  .badges-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -483,7 +552,8 @@ ul {
 }
 
 @media (max-width: 560px) {
-  .services-grid {
+  .services-grid,
+  .badges-grid {
     grid-template-columns: 1fr;
   }
 
