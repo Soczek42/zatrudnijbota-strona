@@ -10,6 +10,9 @@
 <meta property="og:description" content="Skontaktuj się z nami — opisz, z czym potrzebujesz pomocy, a wrócimy z konkretną propozycją wdrożenia AI dla Twojej firmy.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pl_PL">
+<meta property="og:image" content="assets/images/logo.svg">
+
+<link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +26,10 @@
 
 <header class="site-header">
   <nav class="navbar container">
-    <a href="index.html" class="logo">zatrudnijbota<span class="logo-dot">.pl</span></a>
+    <a href="index.html" class="logo">
+      <img src="assets/images/logo.svg" alt="" aria-hidden="true" class="logo-icon">
+      zatrudnijbota<span class="logo-dot">.pl</span>
+    </a>
 
     <button class="nav-toggle" id="navToggle" aria-label="Otwórz menu" aria-expanded="false" aria-controls="navMenu">
       <span></span>
@@ -48,7 +54,7 @@
   </section>
 
   <section class="contact container">
-    <form class="contact-form" action="https://formspree.io/f/mvkpgqzr" method="POST">
+    <form class="contact-form reveal" action="https://formspree.io/f/mvkpgqzr" method="POST">
       <input type="hidden" name="_subject" value="Nowe zapytanie z zatrudnijbota.pl" />
       <input type="hidden" name="_next" value="dziekujemy.html" />
       <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
@@ -77,6 +83,13 @@
     </form>
 
     <p class="contact-direct">Lub napisz bezpośrednio: <a href="mailto:info@zatrudnijbota.pl">info@zatrudnijbota.pl</a></p>
+  </section>
+
+  <section class="next-page container">
+    <a href="index.html" class="next-page-card reveal">
+      <span>Wróć na stronę główną</span>
+      <i class="ti ti-arrow-right next-page-icon" aria-hidden="true"></i>
+    </a>
   </section>
 
 </main>

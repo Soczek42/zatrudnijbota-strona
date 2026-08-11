@@ -3,8 +3,8 @@
    ========================================================================== */
 
 :root {
-  --color-bg: #F5F9FF;
-  --color-card-bg: #EAF2FF;
+  --color-bg: #E8F0FB;
+  --color-card-bg: #F3F8FE;
   --color-primary: #1D4ED8;
   --color-accent: #00D9FF;
   --color-text: #10213D;
@@ -33,6 +33,12 @@ body {
   color: var(--color-text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  animation: page-fade-in 0.3s ease;
+}
+
+@keyframes page-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 img {
@@ -63,9 +69,14 @@ ul {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: rgba(245, 249, 255, 0.85);
+  background-color: rgba(232, 240, 251, 0.85);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(16, 33, 61, 0.06);
+  transition: box-shadow var(--transition);
+}
+
+.site-header.scrolled {
+  box-shadow: 0 4px 20px rgba(16, 33, 61, 0.06);
 }
 
 .navbar {
@@ -76,10 +87,19 @@ ul {
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--color-text);
   letter-spacing: -0.02em;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
 }
 
 .logo-dot {
@@ -571,6 +591,95 @@ ul {
 }
 
 /* ==========================================================================
+   Decorative PCB traces (wide desktop only)
+   ========================================================================== */
+
+@media (min-width: 1320px) {
+  body::before,
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    width: 64px;
+    height: 100%;
+    background-repeat: repeat-y;
+    background-size: 64px 1400px;
+    opacity: 0.13;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  body::before {
+    left: 0;
+    background-image: url('../images/pcb-pattern-left.svg');
+    background-position: top left;
+  }
+
+  body::after {
+    right: 0;
+    background-image: url('../images/pcb-pattern-right.svg');
+    background-position: top right;
+  }
+}
+
+/* ==========================================================================
+   Next page CTA
+   ========================================================================== */
+
+.next-page {
+  padding-block: 0 64px;
+}
+
+.next-page-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: var(--color-card-bg);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  font-weight: 500;
+  font-size: 1.05rem;
+  color: var(--color-text);
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(16, 33, 61, 0.04);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.next-page-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(29, 78, 216, 0.12);
+}
+
+.next-page-icon {
+  font-size: 20px;
+  color: var(--color-accent);
+  transition: transform var(--transition);
+}
+
+.next-page-card:hover .next-page-icon {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   Scroll reveal
+   ========================================================================== */
+
+.reveal {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.js-reveal .reveal {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.js-reveal .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
    Responsive
    ========================================================================== */
 
@@ -645,6 +754,11 @@ ul {
     align-self: stretch;
     text-align: center;
   }
+
+  .next-page-card {
+    padding: 22px 20px;
+    font-size: 0.98rem;
+  }
 }
 
 @media (max-width: 560px) {
@@ -655,5 +769,15 @@ ul {
 
   .why-card {
     padding: 36px 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    animation: none;
+  }
+
+  .reveal {
+    transition: none;
   }
 }

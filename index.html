@@ -10,6 +10,9 @@
 <meta property="og:description" content="Wdrażamy AI — automatyzacje, agentów i inteligentne wtyczki — które obniżą koszty i usprawnią pracę Twojej firmy.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pl_PL">
+<meta property="og:image" content="assets/images/logo.svg">
+
+<link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +26,10 @@
 
 <header class="site-header">
   <nav class="navbar container">
-    <a href="index.html" class="logo">zatrudnijbota<span class="logo-dot">.pl</span></a>
+    <a href="index.html" class="logo">
+      <img src="assets/images/logo.svg" alt="" aria-hidden="true" class="logo-icon">
+      zatrudnijbota<span class="logo-dot">.pl</span>
+    </a>
 
     <button class="nav-toggle" id="navToggle" aria-label="Otwórz menu" aria-expanded="false" aria-controls="navMenu">
       <span></span>
@@ -57,25 +63,25 @@
   <section class="services container">
     <div class="services-grid">
 
-      <div class="service-card">
+      <div class="service-card reveal">
         <i class="ti ti-adjustments service-icon" aria-hidden="true"></i>
         <h2>Optymalizacje</h2>
         <p>Sprawdzamy, gdzie w Twojej firmie tracisz czas i pieniądze, i pokazujemy, jak to naprawić za pomocą AI. Mniej chaosu, więcej efektywności. Efekty widać już po pierwszych tygodniach współpracy.</p>
       </div>
 
-      <div class="service-card">
+      <div class="service-card reveal">
         <i class="ti ti-bolt service-icon" aria-hidden="true"></i>
         <h2>Automatyzacje</h2>
         <p>Zajmujemy się powtarzalnymi zadaniami za Ciebie — maile, dokumenty, przypomnienia. Ty skupiasz się na prowadzeniu firmy, reszta dzieje się sama. Wszystko dzieje się w tle, a Ty odzyskujesz godziny każdego tygodnia.</p>
       </div>
 
-      <div class="service-card">
+      <div class="service-card reveal">
         <i class="ti ti-robot service-icon" aria-hidden="true"></i>
         <h2>Agenci AI</h2>
         <p>Tworzymy inteligentnych asystentów, którzy odpowiadają klientom, pomagają pracownikom i pracują 24 godziny na dobę — bez przerw i zwolnień. Twoi klienci dostają szybką odpowiedź o każdej porze.</p>
       </div>
 
-      <div class="service-card">
+      <div class="service-card reveal">
         <i class="ti ti-plug service-icon" aria-hidden="true"></i>
         <h2>Pluginy / wtyczki</h2>
         <p>Dodajemy AI do narzędzi, których już używasz — bez wymiany systemów i uczenia się czegoś od zera. Wszystko działa tak, jak dotychczas, tylko szybciej i sprawniej.</p>
@@ -85,10 +91,17 @@
   </section>
 
   <section class="why container">
-    <div class="why-card">
+    <div class="why-card reveal">
       <h2>Dlaczego my?</h2>
       <p>Łączymy wiedzę ekspercką z podejściem dopasowanym do realiów małego biznesu — bez gotowych szablonów. Sami zresztą używamy AI na co dzień: nasz asystent, z którym właśnie mogłeś porozmawiać, to najlepszy dowód, że nasze rozwiązania działają.</p>
     </div>
+  </section>
+
+  <section class="next-page container">
+    <a href="oferta.html" class="next-page-card reveal">
+      <span>Zobacz naszą ofertę</span>
+      <i class="ti ti-arrow-right next-page-icon" aria-hidden="true"></i>
+    </a>
   </section>
 
 </main>
