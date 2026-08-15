@@ -52,3 +52,29 @@ if (revealEls.length && !prefersReducedMotion && 'IntersectionObserver' in windo
 
   revealEls.forEach((el) => revealObserver.observe(el));
 }
+
+// PCB decoration cursor spotlight — only for real pointers, never on touch,
+// and skipped entirely when the user prefers reduced motion.
+const pcbDecor = document.querySelector('.pcb-decor');
+const supportsHoverPointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+if (pcbDecor && supportsHoverPointer && !prefersReducedMotion) {
+  let pendingX = 0;
+  let pendingY = 0;
+  let rafScheduled = false;
+
+  const applyMousePosition = () => {
+    pcbDecor.style.setProperty('--mouse-x', `${pendingX}px`);
+    pcbDecor.style.setProperty('--mouse-y', `${pendingY}px`);
+    rafScheduled = false;
+  };
+
+  window.addEventListener('mousemove', (e) => {
+    pendingX = e.clientX;
+    pendingY = e.clientY;
+    if (!rafScheduled) {
+      rafScheduled = true;
+      requestAnimationFrame(applyMousePosition);
+    }
+  }, { passive: true });
+}
