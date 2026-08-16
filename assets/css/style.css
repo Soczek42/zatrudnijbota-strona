@@ -3,12 +3,14 @@
    ========================================================================== */
 
 :root {
-  --color-bg: #E8F0FB;
-  --color-card-bg: #F3F8FE;
-  --color-primary: #1D4ED8;
+  --color-bg: #0A1628;
+  --color-bg-alt: #0F1E35;
+  --color-card-bg: #16294A;
+  --color-primary: #4A8CFF;
   --color-accent: #00D9FF;
-  --color-text: #10213D;
-  --color-text-secondary: #45577A;
+  --color-orange: #FF8A3D;
+  --color-text: #E8F0FB;
+  --color-text-secondary: #9DB2CE;
 
   --font-main: 'Poppins', 'Inter', system-ui, sans-serif;
 
@@ -30,6 +32,8 @@ html {
 body {
   font-family: var(--font-main);
   background-color: var(--color-bg);
+  background-image: radial-gradient(rgba(74, 140, 255, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
   color: var(--color-text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -69,14 +73,14 @@ ul {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: rgba(232, 240, 251, 0.85);
+  background-color: rgba(10, 22, 40, 0.85);
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(16, 33, 61, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   transition: box-shadow var(--transition);
 }
 
 .site-header.scrolled {
-  box-shadow: 0 4px 20px rgba(16, 33, 61, 0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
 }
 
 .navbar {
@@ -196,13 +200,15 @@ ul {
   background-color: var(--color-card-bg);
   border-radius: var(--radius);
   padding: 40px 32px;
-  transition: transform var(--transition), box-shadow var(--transition);
-  box-shadow: 0 4px 20px rgba(16, 33, 61, 0.04);
+  border: 1px solid rgba(255, 138, 61, 0.25);
+  box-shadow: 0 0 20px rgba(255, 138, 61, 0.15);
+  transition: transform var(--transition), box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .cta-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(29, 78, 216, 0.12);
+  border-color: rgba(255, 138, 61, 0.4);
+  box-shadow: 0 0 20px rgba(255, 138, 61, 0.3);
 }
 
 .cta-icon {
@@ -267,17 +273,28 @@ ul {
 
 .offer-section {
   padding-block: 48px;
-  border-top: 1px solid rgba(16, 33, 61, 0.06);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .offer-section:nth-of-type(even) {
-  background-color: var(--color-card-bg);
+  background-color: var(--color-bg-alt);
 }
 
 .offer-inner {
   display: flex;
   align-items: flex-start;
   gap: 32px;
+  background-color: var(--color-card-bg);
+  border-radius: var(--radius);
+  padding: 32px;
+  border: 1px solid rgba(255, 138, 61, 0.25);
+  box-shadow: 0 0 20px rgba(255, 138, 61, 0.15);
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.offer-inner:hover {
+  border-color: rgba(255, 138, 61, 0.4);
+  box-shadow: 0 0 20px rgba(255, 138, 61, 0.3);
 }
 
 .offer-icon {
@@ -363,12 +380,15 @@ ul {
   border-radius: var(--radius);
   padding: 32px 24px;
   text-align: center;
-  transition: transform var(--transition), box-shadow var(--transition);
+  border: 1px solid rgba(255, 138, 61, 0.25);
+  box-shadow: 0 0 20px rgba(255, 138, 61, 0.15);
+  transition: transform var(--transition), box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .badge-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(29, 78, 216, 0.1);
+  border-color: rgba(255, 138, 61, 0.4);
+  box-shadow: 0 0 20px rgba(255, 138, 61, 0.3);
 }
 
 .badge-icon {
@@ -424,7 +444,7 @@ ul {
   font-size: 0.95rem;
   color: var(--color-text);
   background-color: var(--color-card-bg);
-  border: 1px solid transparent;
+  border: 1px solid rgba(157, 178, 206, 0.6);
   border-radius: var(--radius);
   padding: 12px 16px;
   resize: vertical;
@@ -449,7 +469,7 @@ ul {
   font-family: inherit;
   font-size: 0.95rem;
   font-weight: 600;
-  color: var(--color-text);
+  color: var(--color-bg);
   background-color: var(--color-accent);
   border: none;
   border-radius: var(--radius);
@@ -500,12 +520,15 @@ ul {
   border-radius: var(--radius);
   padding: 32px 24px;
   text-align: center;
-  transition: transform var(--transition), box-shadow var(--transition);
+  border: 1px solid rgba(255, 138, 61, 0.25);
+  box-shadow: 0 0 20px rgba(255, 138, 61, 0.15);
+  transition: transform var(--transition), box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .service-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(29, 78, 216, 0.1);
+  border-color: rgba(255, 138, 61, 0.4);
+  box-shadow: 0 0 20px rgba(255, 138, 61, 0.3);
 }
 
 .service-icon {
@@ -545,7 +568,7 @@ ul {
   max-width: 760px;
   margin-inline: auto;
   text-align: center;
-  background: linear-gradient(135deg, var(--color-primary), #1633a0);
+  background: linear-gradient(135deg, #1D4ED8, #1633a0);
   color: #fff;
   border-radius: var(--radius);
   padding: 48px 40px;
@@ -566,7 +589,7 @@ ul {
    ========================================================================== */
 
 .site-footer {
-  border-top: 1px solid rgba(16, 33, 61, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-block: 28px;
 }
 
@@ -621,7 +644,7 @@ ul {
 .pcb-decor-base {
   width: var(--pcb-band);
   background-size: 100% 1600px;
-  opacity: 0.13;
+  opacity: 0.28;
 }
 
 .pcb-decor-base-left {
@@ -684,13 +707,15 @@ ul {
   font-size: 1.05rem;
   color: var(--color-text);
   text-align: center;
-  box-shadow: 0 4px 20px rgba(16, 33, 61, 0.04);
-  transition: transform var(--transition), box-shadow var(--transition);
+  border: 1px solid rgba(255, 138, 61, 0.25);
+  box-shadow: 0 0 20px rgba(255, 138, 61, 0.15);
+  transition: transform var(--transition), box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .next-page-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(29, 78, 216, 0.12);
+  border-color: rgba(255, 138, 61, 0.4);
+  box-shadow: 0 0 20px rgba(255, 138, 61, 0.3);
 }
 
 .next-page-icon {
@@ -744,7 +769,7 @@ ul {
     right: 0;
     flex-direction: column;
     background-color: var(--color-bg);
-    border-bottom: 1px solid rgba(16, 33, 61, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding: 16px 24px;
     gap: 18px;
     transform: translateY(-8px);
@@ -786,6 +811,7 @@ ul {
   .offer-inner {
     flex-direction: column;
     gap: 16px;
+    padding: 24px;
   }
 
   .offer-icon {

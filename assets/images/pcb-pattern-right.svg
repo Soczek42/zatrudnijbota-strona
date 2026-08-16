@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="400" height="1600" viewBox="0 0 400 1600">
-  <g fill="none" stroke="#1D4ED8" stroke-width="1">
+  <g fill="none" stroke="#00D9FF" stroke-width="1">
     <!-- cluster 1: tiny, near top -->
     <path d="M370 90 L370 140 L340 170"/>
 
@@ -30,7 +30,7 @@
     <path d="M380 1250 L380 1320 L330 1370"/>
     <path d="M380 1320 L398 1310"/>
   </g>
-  <g fill="#1D4ED8">
+  <g fill="#00D9FF">
     <circle cx="370" cy="90" r="1.5"/>
     <circle cx="370" cy="140" r="2.0"/>
     <circle cx="340" cy="170" r="1.6"/>
