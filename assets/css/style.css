@@ -45,6 +45,12 @@ body {
   to { opacity: 1; }
 }
 
+main,
+.site-footer {
+  position: relative;
+  z-index: 1;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -276,10 +282,6 @@ ul {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.offer-section:nth-of-type(even) {
-  background-color: var(--color-bg-alt);
-}
-
 .offer-inner {
   display: flex;
   align-items: flex-start;
@@ -290,6 +292,10 @@ ul {
   border: 1px solid rgba(255, 138, 61, 0.25);
   box-shadow: 0 0 20px rgba(255, 138, 61, 0.15);
   transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.offer-section:nth-of-type(even) .offer-inner {
+  background-color: var(--color-bg-alt);
 }
 
 .offer-inner:hover {
@@ -350,6 +356,17 @@ ul {
 .about-text {
   max-width: 700px;
   margin-inline: auto;
+  background-color: var(--color-card-bg);
+  border-radius: var(--radius);
+  padding: 32px;
+  border: 1px solid rgba(255, 138, 61, 0.25);
+  box-shadow: 0 0 20px rgba(255, 138, 61, 0.15);
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.about-text:hover {
+  border-color: rgba(255, 138, 61, 0.4);
+  box-shadow: 0 0 20px rgba(255, 138, 61, 0.3);
 }
 
 .about-text p {
@@ -618,12 +635,11 @@ ul {
    ========================================================================== */
 
 .pcb-decor {
-  --pcb-band: clamp(0px, calc((100vw - var(--max-width)) / 2 - 32px), 24vw);
   display: none;
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: -1;
+  z-index: 0;
 }
 
 @media (min-width: 900px) {
@@ -635,42 +651,25 @@ ul {
 .pcb-decor-base,
 .pcb-decor-glow {
   position: absolute;
-  top: 0;
-  height: 100%;
+  inset: 0;
   pointer-events: none;
   background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url('../images/pcb-pattern.svg');
 }
 
 .pcb-decor-base {
-  width: var(--pcb-band);
-  background-size: 100% 1600px;
-  opacity: 0.28;
+  opacity: 0.1;
 }
 
-.pcb-decor-base-left {
-  left: 0;
-  background-image: url('../images/pcb-pattern-left.svg');
-  background-position: top left;
-}
-
-.pcb-decor-base-right {
-  right: 0;
-  background-image: url('../images/pcb-pattern-right.svg');
-  background-position: top right;
-}
-
-/* Cursor spotlight: a brighter copy of the same traces, revealed only
+/* Cursor spotlight: a brighter reveal of the same traces, shown only
    inside a soft radial mask centered on the pointer. --mouse-x/--mouse-y
    are written by script.js (rAF-throttled) and default off-screen so no
    glow shows until the pointer actually moves. */
 .pcb-decor-glow {
   display: none;
-  left: 0;
-  width: 100%;
-  opacity: 0.45;
-  background-position: top left, top right;
-  background-size: var(--pcb-band) 1600px, var(--pcb-band) 1600px;
-  background-image: url('../images/pcb-pattern-left-glow.svg'), url('../images/pcb-pattern-right-glow.svg');
+  opacity: 0.4;
   mask-image: radial-gradient(220px circle at var(--mouse-x, -9999px) var(--mouse-y, -9999px), #000 0%, #000 30%, transparent 100%);
   -webkit-mask-image: radial-gradient(220px circle at var(--mouse-x, -9999px) var(--mouse-y, -9999px), #000 0%, #000 30%, transparent 100%);
 }
@@ -811,6 +810,10 @@ ul {
   .offer-inner {
     flex-direction: column;
     gap: 16px;
+    padding: 24px;
+  }
+
+  .about-text {
     padding: 24px;
   }
 
